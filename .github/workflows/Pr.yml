@@ -1,11 +1,13 @@
 name: pr test
 
 on:
-  push:
-    paths: [ 'backend/**' ]
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
+      - develop
+    paths:
+      - backend/**
+      - .github/** # Github Actions 작업을 위한 포함
 
 permissions:
   contents: read
