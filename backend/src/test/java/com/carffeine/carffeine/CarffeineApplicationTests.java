@@ -7,5 +7,6 @@ class CarffeineApplicationTests {
 
     @Test
     void contextLoads() {
+        throw new IllegalException();
     }
 }
