@@ -22,7 +22,7 @@ import java.util.Objects;
 public class ScrapperService {
 
     private static final String REQUEST_URL = "/getChargerInfo";
-    private static final String SERVICE_KEY = "As";
+    private static final String SERVICE_KEY = "A";
     private static final int ROW_SIZE = 100;
     private static final String DATA_TYPE = "JSON";
 
