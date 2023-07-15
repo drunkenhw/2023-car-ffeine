@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class Charger {
 
     @Id
-    @Column(name = "station_id")
+    @Column(name = "station_iㅇㄴㅁd")
     private String stationId;
 
     @Id
