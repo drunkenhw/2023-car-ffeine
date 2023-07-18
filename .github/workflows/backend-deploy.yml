@@ -77,6 +77,8 @@ jobs:
           ls
           sudo chmod 400 $HOME/key.pem
           ssh -i ./key.pem -o StrictHostKeyChecking=no ${username}@${host}
+          sudo ls
+          exit
         env:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{secrets.SERVER_USERNAME}}
