@@ -1,15 +1,13 @@
 name: deploy
 
 on:
-  pull_request:
+  push:
     branches:
-      - release
-    paths:
-      - backend/**
+      - main
+
+
 
 jobs:
-  test:
-    uses: ./.github/workflows/backend-test-when-pr.yml
 
   docker-build:
     runs-on: ubuntu-latest
