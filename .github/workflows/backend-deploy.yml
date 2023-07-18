@@ -72,8 +72,8 @@ jobs:
       - name: Build and deploy
         run: |
           echo "$SSH_PEM_KEY" >> $HOME/key.pem
+          ls
           chmod 400 $HOME/key.pem
-          ssh -i $HOME/key.pem -o StrictHostKeyChecking=no ${username}@${host}
         env:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{secrets.SERVER_USERNAME}}
