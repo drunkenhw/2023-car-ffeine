@@ -4,4 +4,4 @@ FROM amazoncorretto:17-alpine-jdk
 
 COPY build/libs/*.jar /app/carffeine.jar
 
-ENTRTYPOINT ["java", "-jar", "/app/carffeine.jar"]
+ENTRYPOINT ["java", "-jar", "/app/carffeine.jar"]
