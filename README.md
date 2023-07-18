@@ -22,7 +22,7 @@ das
       </a>
     </td>
   </tr>
-  <tr>
+  <tr>das
     <td align="center">
       <a href="https://github.com/gabrielyoon7" target="_blank">
         가브리엘(윤주현)
