@@ -84,17 +84,13 @@ jobs:
           username: ${{secrets.SERVER_USERNAME}}
           port: ${{secrets.SERVER_PORT}}
           key: ${{secrets.SERVER_PASSWORD}}
-      
-#       - name: ls
-#         run: |
-#           ls
-        - name: hello
-          run: |
+      - name: hello
+        run: |
             echo ${key}
             echo ${username}
             echo ${port}
             echo ${host}
-          env:
+        env:
             host: ${{ secrets.SERVER_HOST }}
             username: ${{secrets.SERVER_USERNAME}}
             port: ${{secrets.SERVER_PORT}}
