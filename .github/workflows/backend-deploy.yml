@@ -80,23 +80,23 @@ jobs:
           script: |
             ls
 
-      - name: docker stop
-        run: |
-          sudo docker stop backend || true
-          sudo docker rm backend || true
+#       - name: docker stop
+#         run: |
+#           sudo docker stop backend || true
+#           sudo docker rm backend || true
 
-      - name: docker pull
-        run: |
-          sudo docker pull woowacarffeine/backend:latest
+#       - name: docker pull
+#         run: |
+#           sudo docker pull woowacarffeine/backend:latest
 
-      - name: docker run
-        run: |
-          sudo docker run -d -p 8080:8080 -e DB_URL=${DB_URL} -e DB_USER=${DB_USER} -e DB_PASSWORD=${DB_PASSWORD} --name backend woowacarffeine/backend:latest
-        env:
-          DB_URL: ${{ secrets.DB_URL }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+#       - name: docker run
+#         run: |
+#           sudo docker run -d -p 8080:8080 -e DB_URL=${DB_URL} -e DB_USER=${DB_USER} -e DB_PASSWORD=${DB_PASSWORD} --name backend woowacarffeine/backend:latest
+#         env:
+#           DB_URL: ${{ secrets.DB_URL }}
+#           DB_USER: ${{ secrets.DB_USER }}
+#           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
-      - name: clean docker images
-        run: |
-          sudo docker image prune -f
+#       - name: clean docker images
+#         run: |
+#           sudo docker image prune -f
