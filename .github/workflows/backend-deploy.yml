@@ -71,9 +71,9 @@ jobs:
     steps:
       - name: Build and deploy
         run: |
-          echo "$SSH_PEM_KEY" >> $HOME/key.pem
-          ls
-          chmod 400 $HOME/key.pem
+          sudo echo "$SSH_PEM_KEY" >> $HOME/key.pem
+          sudo ls
+          sudo chmod 400 $HOME/key.pem
         env:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{secrets.SERVER_USERNAME}}
