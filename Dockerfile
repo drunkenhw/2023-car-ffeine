@@ -1,6 +1,6 @@
 FROM amazoncorretto:17-alpine-jdk
 
-WORKDIR /app
+# WORKDIR /app
 
 COPY build/libs/*.jar /app/carffeine.jar
 
