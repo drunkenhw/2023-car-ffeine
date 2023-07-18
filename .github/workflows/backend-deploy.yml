@@ -76,7 +76,11 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
-
+          script_stop: true
+          script: |
+            sudo docker stop backend || true
+            sudo docker rm backend || true
+            sudo docker pull woowacarffeine/backend:latest
 
       - name: docker stop
         run: |
