@@ -69,6 +69,19 @@ jobs:
 #     if: ${{ needs.docker-build.result == 'success' }}
 #     needs: [ docker-build ]
     steps:
+      - name: Build and deploy
+        run: |
+          echo "$SSH_PEM_KEY" >> $HOME/key.pem
+          chmod 400 $HOME/key.pem
+          ssh -i $HOME/key.pem -o StrictHostKeyChecking=no ${username}@${host}
+        env:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{secrets.SERVER_USERNAME}}
+          port: ${{secrets.SERVER_PORT}}
+          key: ${{secrets.SERVER_PASSWORD}}
+      - name: ls
+        run: |
+          ls
       - name: Join EC2 dev server
         uses: appleboy/ssh-action@master
         with:
