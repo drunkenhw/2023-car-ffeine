@@ -51,7 +51,7 @@ jobs:
   deploy:
     runs-on: self-hosted
     if: ${{ needs.test.result == 'success' }}
-    needs: [ test, docker-build ]
+    needs: [ docker-build ]
     steps:
       - name: docker stop
         run: |
