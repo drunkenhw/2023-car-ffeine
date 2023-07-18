@@ -78,9 +78,7 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script_stop: true
           script: |
-            sudo docker stop backend || true
-            sudo docker rm backend || true
-            sudo docker pull woowacarffeine/backend:latest
+            ls
 
       - name: docker stop
         run: |
