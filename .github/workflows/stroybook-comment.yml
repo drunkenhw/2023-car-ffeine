@@ -1,0 +1,21 @@
+name: assign_issue_number_to_pr_body
+
+on:
+  pull_request:
+    types: [ labeled ]
+
+jobs:
+  add-stroybook-link:
+    if: github.event.label.name == 'bug'
+    runs-on: ubuntu-latest
+    steps:
+      - name: append storybook
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const body = pr.data.body;
+            const newBody = body + "\n\n" + "## 🚀 Storybook\n+ "> https://storybook.carffe.in/" ;
+            await github.pulls.update({
+                  body: newBody
+              });
