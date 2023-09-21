@@ -20,7 +20,7 @@ jobs:
       - name: append feature number to pr body pr branch = feat/(issueNumber)
         uses: actions/github-script@v4
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const pr = await github.pulls.get({
                 owner: context.repo.owner,
