@@ -13,3 +13,26 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run a one-line script
       run: echo Hello, world!
+
+  append_issue_number_to_pr_body:
+    runs-on: ubuntu-latest
+    steps:
+      - name: append feature number to pr body pr branch = feat/(issueNumber)
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = await github.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number
+            });
+            const body = pr.data.body;
+            const issueNumber= pr.data.head.ref.split('/')[1];
+            const newBody = body + "\n\n" + "close #" + issueNumber;
+            await github.pulls.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: context.issue.number,
+                  body: newBody
+              });
