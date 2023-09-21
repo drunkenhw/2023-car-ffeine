@@ -15,6 +15,7 @@ jobs:
       run: echo Hello, world!
 
   append_issue_number_to_pr_body:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: append feature number to pr body pr branch = feat/(issueNumber)
