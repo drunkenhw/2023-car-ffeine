@@ -30,7 +30,7 @@ jobs:
             });
             const body = pr.data.body;
             const issueNumber = pr.data.head.ref.split('/')[1];
-            const newBody = body + "\n\n" + "close #" + issueNumber;
+            const newBody = body + "\n\n" + "##Stroybook \n\n"+ "http://google.com";
             await github.pulls.update({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
