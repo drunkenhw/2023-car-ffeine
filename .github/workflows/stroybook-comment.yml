@@ -12,7 +12,7 @@ jobs:
       - name: append storybook
         uses: actions/github-script@v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.TOKEN }}
           script: |
             const body = pr.data.body;
             const newBody = body + "\n\n" + "## 🚀 Storybook\n+ "> https://storybook.carffe.in/" ;
